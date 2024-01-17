@@ -16,9 +16,3 @@ artifacts:
   files:
     - imagedefinitions_nginx.json
     - imagedefinitions_apache.json
-
-
-#DOCKERHUB_USERNAME artemtabolich
-#DOCKERHUB_PASSWORD
-#IMAGE_REPO_NAME artemtabolich/nginx-task14
-#IMAGE_TAG latest
