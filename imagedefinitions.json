@@ -1,0 +1,13 @@
+[
+    {
+      "name": "nginx",
+      "imageUri": "danwhite123/nginx-image:latest",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ],
+      "essential": true
+    }
+  ]

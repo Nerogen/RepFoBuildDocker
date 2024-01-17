@@ -1,14 +1,20 @@
 version: 0.2
-
 phases:
-  install:
-    runtime-versions:
-      python: 3.8
+  pre_build:
+    commands:
+      - echo Logging ...
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
 
   build:
-    commands:  # E229UBUXBQ309W front id
-      - aws cloudfront create-invalidation --distribution-id "E229UBUXBQ309W" --paths "/*"
-
+    commands:
+      - echo Build started on date
+      - echo Building the Docker image...
+      - docker build -t danwhite123/nginx-image:latest .
+  post_build:
+    commands:
+      - echo Build completed on date
+      - echo Pushing the Docker image...
+      - docker push danwhite123/nginx-image:latest
 artifacts:
-  files: "**/*"
-  exclude_buildspec: true
+    files:
+        - imagedefinitions.json
