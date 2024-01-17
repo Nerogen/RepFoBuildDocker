@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on date
       - echo Building the Docker image...
-      - docker build -t danwhite123/nginx-image:latest .
+      - docker build -t danwhite123/nginx-image:latest -f Dockerfile_nginx .
   post_build:
     commands:
       - echo Build completed on date
