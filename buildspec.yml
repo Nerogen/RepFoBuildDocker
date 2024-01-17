@@ -5,13 +5,13 @@ phases:
 
   build:
     commands:
-      - docker build . -t $IMAGE_REPO_NAME:latest
-      - docker tag $IMAGE_REPO_NAME:latest $IMAGE_REPO_NAME:latest
-  post_build:
-    commands:
-      - docker push $IMAGE_REPO_NAME:latest
-      - printf '[{"name":"nginx","imageUri":"danwhite123/task14-nginx_container","portMappings":[{"containerPort":80,"hostPort":80}],"essential":true}]' > imagedefinitions_nginx.json
-      - printf '[{"name":"apache","imageUri":"danwhite123/task14-apache_container","portMappings":[{"containerPort":80,"hostPort":80}],"essential":true}]' > imagedefinitions_apache.json
+      - docker build . -t nginx:latest
+#      - docker tag $IMAGE_REPO_NAME:latest $IMAGE_REPO_NAME:latest
+#  post_build:
+#    commands:
+#      - docker push $IMAGE_REPO_NAME:latest
+#      - printf '[{"name":"nginx","imageUri":"danwhite123/task14-nginx_container","portMappings":[{"containerPort":80,"hostPort":80}],"essential":true}]' > imagedefinitions_nginx.json
+#      - printf '[{"name":"apache","imageUri":"danwhite123/task14-apache_container","portMappings":[{"containerPort":80,"hostPort":80}],"essential":true}]' > imagedefinitions_apache.json
 artifacts:
   files:
     - imagedefinitions_nginx.json
