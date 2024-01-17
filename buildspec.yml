@@ -3,10 +3,9 @@ phases:
     commands:
       - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
 
-
   build:
     commands:
-      - docker build . -t nginx:latest
+      - docker build .
 #      - docker tag $IMAGE_REPO_NAME:latest $IMAGE_REPO_NAME:latest
 #  post_build:
 #    commands:
