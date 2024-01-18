@@ -7,13 +7,11 @@ phases:
 
   build:
     commands:
-      - echo Build started on date
-      - echo Building the Docker image...
+      - echo Building the image...
       - docker build -t danwhite123/nginx-image:latest -f Dockerfile_nginx .
   post_build:
     commands:
-      - echo Build completed on date
-      - echo Pushing the Docker image...
+      - echo Pushing the image...
       - docker push danwhite123/nginx-image:latest
 artifacts:
     files:
